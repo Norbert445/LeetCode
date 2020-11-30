@@ -3,18 +3,17 @@ function searchBST(root, val) {
     if (root == null) {
         return null;
     }
-    const dfs = (node) => {
-        if (node == null)
-            return null;
-        dfs(node.right);
-        if (node.val === val) {
-            return node;
+    if (root == null)
+        return null;
+    while (root) {
+        if (val > root.val) {
+            root = root.right;
         }
-        dfs(node.left);
-        if (node.val === val) {
-            return node;
+        else if (val < root.val) {
+            root = root.left;
         }
-    };
-    dfs(root);
+        else
+            return root;
+    }
     return null;
 }
