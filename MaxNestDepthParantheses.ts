@@ -1,4 +1,4 @@
-function maxDepth(s: string): number {
+function maxDepths(s: string): number {
   let i: number;
   let stack: string[] = [];
   let max: number = 0;

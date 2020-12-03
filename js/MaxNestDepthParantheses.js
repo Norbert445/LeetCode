@@ -1,5 +1,5 @@
 "use strict";
-function maxDepth(s) {
+function maxDepths(s) {
     let i;
     let stack = [];
     let max = 0;

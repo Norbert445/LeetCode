@@ -6,7 +6,7 @@ class TreeNode {
         this.right = right === undefined ? null : right;
     }
 }
-function rangeSumBST(root, low, high) {
+function rangeSum(root, low, high) {
     let sum = 0;
     if (root == null) {
         return sum;

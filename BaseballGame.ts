@@ -5,16 +5,13 @@ function calPoints(ops: string[]): number {
   let j: number = 0;
   for (i = 0; i < ops.length; i++) {
     if (ops[i] == "+") {
-      result.push(result[j - 1] + result[j - 2]);
-      j++;
+      result.push(result[result.length - 1] + result[result.length - 2]);
     } else if (ops[i] == "D") {
-      result.push(result[j - 1] * 2);
+      result.push(result[result.length - 1] * 2);
     } else if (ops[i] == "C") {
-      result.splice(j - 1, 1);
-      j--;
+      result.splice(result.length - 1, 1);
     } else {
       result.push(parseInt(ops[i]));
-      j++;
     }
   }
   console.log(result);

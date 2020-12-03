@@ -8,7 +8,7 @@ class TreeNode {
     this.right = right === undefined ? null : right;
   }
 }
-function rangeSumBST(root: TreeNode | null, low: number, high: number): number {
+function rangeSum(root: TreeNode | null, low: number, high: number): number {
   let sum: number = 0;
   if (root == null) {
     return sum;
