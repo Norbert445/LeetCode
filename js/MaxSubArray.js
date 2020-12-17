@@ -1,21 +1,14 @@
 "use strict";
 function maxSubArray(nums) {
     let i;
-    let j;
-    let length = nums.length;
-    let sum = 0;
-    let max = Number.MIN_VALUE;
-    for (i = 0; i < length; i++) {
-        while (length != i) {
-            for (j = i; j < length; j++) {
-                sum += nums[j];
-            }
-            if (sum > max) {
-                max = sum;
-            }
-            sum = 0;
-            length--;
+    let local_max = 0;
+    let global_max = Number.NEGATIVE_INFINITY;
+    for (i = 0; i < nums.length; i++) {
+        local_max = Math.max(nums[i], local_max + nums[i]);
+        if (local_max > global_max) {
+            global_max = local_max;
         }
     }
-    return max;
+    return global_max;
 }
+console.log(maxSubArray([-1]));
